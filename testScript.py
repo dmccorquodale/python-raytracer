@@ -1,9 +1,9 @@
-from myClass import addVector
-from myClass import multiplyVector
+from vector import Vector
 
-vectorA = [1,-3,-2]
-vectorB = [3,6,9]
+myVector = Vector(1.0, -2.0, -2.0)
+print (myVector.magnitude())
 
-addVector(vectorA, vectorB)
+secondVector = Vector(3.0, 6.0, 9.0)
+aNumber = 3
 
-multiplyVector(vectorA, 7)
+print (myVector.dot_product(myVector,aNumber))

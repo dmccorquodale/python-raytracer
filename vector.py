@@ -18,3 +18,20 @@ class Vector:
 
     def normalize(self):
         return self / self.magnitude()
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y, self.z + other.z)
+
+    def __sub__(self, other):
+        return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
+
+    def __mul__(self, other):
+        assert not isinstance(other, Vector)
+        return Vector(self.x * other, self.y * other, self.z * other)
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
+    def __truediv__(self, other):
+        assert not isinstance(other, Vector)
+        return Vector(self.x / other, self.y / other, self.z / other)
